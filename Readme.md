@@ -72,11 +72,11 @@ Follow these steps to create a PostgreSQL database on AWS:
 
 The script will generate random transaction data and insert it into the PostgreSQL database at regular intervals (every 15 seconds in this case).
 
-To run the script, use:
-
-```bash
-   python app.py
-## 3. Prerequisites
+   To run the script, use:
+    ```bash
+      python app.py
+   
+##  Connecting with Grafana cloud
 
 Before you begin, make sure you have:
 
