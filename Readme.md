@@ -31,9 +31,50 @@ To run this project, you will need:
 - **Grafana Cloud** account for monitoring and dashboard creation.
 - **Python 3.x** and required libraries installed.
 
+
+
 ### Setup
 
 1. **Install Required Libraries**:
    You need to install the following Python libraries:
    ```bash
    pip install faker psycopg2 pandas
+# Real-Time Transaction Monitoring System with AWS RDS, PostgreSQL, and Grafana Cloud
+
+This project demonstrates how to create a real-time transaction monitoring system using AWS RDS for PostgreSQL, Python for data generation, and Grafana Cloud for visualizing the data. The system simulates banking transaction data and stores it in PostgreSQL on AWS, which is then visualized through Grafana dashboards in real time.
+
+## Project Setup
+
+### 1. Create the PostgreSQL Database on AWS
+
+Follow these steps to create a PostgreSQL database on AWS:
+
+1. **Log in to your AWS account.**
+2. **Create an RDS instance** with PostgreSQL as the engine.
+3. Ensure that the database is **publicly accessible**.
+4. **Note down the connection details**, which will include:
+   - Host
+   - Port
+   - Database name (dbname)
+   - User
+   - Password
+
+### 2. Configure the Python Script
+
+1. Download or clone the Python script provided in the project.
+2. Replace the following connection details in the script with your **AWS RDS PostgreSQL** credentials:
+   - `host`
+   - `port`
+   - `dbname`
+   - `user`
+   - `password`
+   
+### 3. Run the Script
+
+The script will generate random transaction data and insert it into the PostgreSQL database at regular intervals (every 15 seconds in this case).
+
+To run the script, use:
+
+```bash
+python transaction_monitor.py
+
