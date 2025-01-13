@@ -22,7 +22,7 @@ The goal of this project is to simulate real-time banking transaction data and a
 
 ## Getting Started
 
-### Prerequisites
+## Prerequisites
 
 To run this project, you will need:
 
@@ -33,7 +33,7 @@ To run this project, you will need:
 
 
 
-### Setup
+## Setup
 
 1. **Install Required Libraries**:
    You need to install the following Python libraries:
@@ -43,7 +43,7 @@ To run this project, you will need:
 
 ## Project Setup
 
-### 1. Create the PostgreSQL Database on AWS
+## 1. Create the PostgreSQL Database on AWS
 
 Follow these steps to create a PostgreSQL database on AWS:
 
@@ -57,7 +57,7 @@ Follow these steps to create a PostgreSQL database on AWS:
    - User
    - Password
 
-### 2. Configure the Python Script
+## 2. Configure the Python Script
 
 1. Download or clone the Python script provided in the project.
 2. Replace the following connection details in the script with your **AWS RDS PostgreSQL** credentials:
@@ -67,7 +67,7 @@ Follow these steps to create a PostgreSQL database on AWS:
    - `user`
    - `password`
    
-### 3. Run the Script
+## 3. Run the Script
 
 The script will generate random transaction data and insert it into the PostgreSQL database at regular intervals (every 15 seconds in this case).
 
@@ -76,3 +76,53 @@ To run the script, use:
 ```bash
 python app.py
 
+
+
+## Real-Time Transaction Monitoring Dashboard in Grafana
+
+This guide walks you through setting up a real-time dashboard in **Grafana** to visualize transaction data stored in **PostgreSQL**. It assumes that the data is being inserted into PostgreSQL at regular intervals and you want to visualize this data on Grafana.
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- A **Grafana Cloud** account.
+- A **PostgreSQL database** with transaction data stored in it.
+- The connection details for your PostgreSQL database (host, port, username, password).
+
+## Steps
+
+### 1. Connect PostgreSQL to Grafana Cloud
+
+1. **Log in to your Grafana Cloud account.**
+
+2. **Create a new data source**:
+   - Navigate to **Configuration** > **Data Sources**.
+   - Click on **Add data source** and select **PostgreSQL** as the data source.
+
+3. **Provide PostgreSQL connection details**:
+   - **Host**: Enter the host of your PostgreSQL database.
+   - **Port**: Use the default PostgreSQL port (5432).
+   - **Database name**: Enter your PostgreSQL database name.
+   - **User**: Enter your PostgreSQL username.
+   - **Password**: Enter your PostgreSQL password.
+
+   Ensure that Grafana can connect to your PostgreSQL database. Test the connection after entering the credentials.
+
+### 2. Create Dashboards in Grafana
+
+Once your PostgreSQL data source is connected to Grafana, you can create dashboards to visualize the transaction data in real-time.
+
+#### Some Useful Visualizations:
+
+- **Total Transactions Per Minute**: 
+   - Create a graph that shows the total number of transactions that occur each minute. You can use the `timestamp` field from your data and group it by minute.
+
+- **Breakdown of Transactions by Merchant Category**: 
+   - Create a pie chart or bar chart that breaks down the number of transactions by the merchant category (e.g., Retail, Electronics, Healthcare). Use the `merchant_category` field for this.
+
+- **Trends in Transaction Amounts Over Time**: 
+   - Create a time series graph to show the trend of transaction amounts over time. Use the `timestamp` and `amount` fields for this.
+
+- **Detection of Potentially Fraudulent Activities**:
+   - Create a panel that visualizes potentially fraudulent activities based on rules applied in the script. This could include transactions marked with specific fraud detection flags in the `rules_triggered` or `decision` fields.
