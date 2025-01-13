@@ -39,9 +39,7 @@ To run this project, you will need:
    You need to install the following Python libraries:
    ```bash
    pip install faker psycopg2 pandas
-# Real-Time Transaction Monitoring System with AWS RDS, PostgreSQL, and Grafana Cloud
 
-This project demonstrates how to create a real-time transaction monitoring system using AWS RDS for PostgreSQL, Python for data generation, and Grafana Cloud for visualizing the data. The system simulates banking transaction data and stores it in PostgreSQL on AWS, which is then visualized through Grafana dashboards in real time.
 
 ## Project Setup
 
