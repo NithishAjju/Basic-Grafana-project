@@ -74,5 +74,5 @@ The script will generate random transaction data and insert it into the PostgreS
 To run the script, use:
 
 ```bash
-python transaction_monitor.py
+python app.py
 
