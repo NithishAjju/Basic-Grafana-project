@@ -1,4 +1,4 @@
-w# Real-Time Transaction Monitoring System with AWS, PostgreSQL, and Grafana Cloud
+# Real-Time Transaction Monitoring System with AWS, PostgreSQL, and Grafana Cloud
 
 This project leverages AWS services, PostgreSQL, and Grafana Cloud to create a real-time transaction monitoring system. The system generates synthetic banking transaction data using the Faker library and inserts the data into a PostgreSQL database hosted on AWS. The data is then connected to Grafana Cloud to visualize and monitor transactions in real time.
 
@@ -67,6 +67,15 @@ Follow these steps to create a PostgreSQL database on AWS:
    - `user`
    - `password`
 
+
+## 3. Run the Script
+
+The script will generate random transaction data and insert it into the PostgreSQL database at regular intervals (every 15 seconds in this case).
+
+To run the script, use:
+
+```bash
+   python app.py
 ## 3. Prerequisites
 
 Before you begin, make sure you have:
@@ -112,12 +121,4 @@ Once your PostgreSQL data source is connected to Grafana, you can create dashboa
 - **Detection of Potentially Fraudulent Activities**:
    - Create a panel that visualizes potentially fraudulent activities based on rules applied in the script. This could include transactions marked with specific fraud detection flags in the `rules_triggered` or `decision` fields.
 
-## 4. Run the Script
-
-The script will generate random transaction data and insert it into the PostgreSQL database at regular intervals (every 15 seconds in this case).
-
-To run the script, use:
-
-```bash
-   python app.py
 
