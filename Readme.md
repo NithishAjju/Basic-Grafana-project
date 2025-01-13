@@ -66,7 +66,7 @@ Follow these steps to create a PostgreSQL database on AWS:
    - `dbname`
    - `user`
    - `password`
-   
+
 ## 3. Run the Script
 
 The script will generate random transaction data and insert it into the PostgreSQL database at regular intervals (every 15 seconds in this case).
@@ -75,12 +75,6 @@ To run the script, use:
 
 ```bash
 python app.py
-
-
-
-## Real-Time Transaction Monitoring Dashboard in Grafana
-
-This guide walks you through setting up a real-time dashboard in **Grafana** to visualize transaction data stored in **PostgreSQL**. It assumes that the data is being inserted into PostgreSQL at regular intervals and you want to visualize this data on Grafana.
 
 ## Prerequisites
 
